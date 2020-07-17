@@ -1,0 +1,335 @@
+@import "../../public/styles/colors.scss";
+
+.searchInputDate {
+  border-radius: 5px;
+  background-color: transparent;
+  color: #000;
+  border: 2px solid transparent;
+  padding: 0 10px;
+  height: 60px;
+  font-size: 18px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+
+  box-shadow: 0.4em 0.4em 8px 0 rgba(122, 122, 122, 0.5);
+  transition: all 0.3s;
+  &:disabled {
+    opacity: 0.3;
+  }
+  &:hover {
+    border-color: $yellow;
+  }
+}
+
+.search {
+  margin: auto;
+  padding: 20px 20px 60px;
+  // border-radius: 10px;
+  // margin-top: 40px;
+  background-color: rgba(2,100,231, .8);
+  // margin-top: 210px;
+  height: 300px;
+  position: absolute;
+  width: 100%;
+  top: 25%;
+  // transition: all 0.3s;
+  .search__wrapper {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr 1fr 2fr 1fr;
+    grid-gap: 1px;
+    grid-template-areas:
+      "departure arrival dates options "
+      "sbm sbm sbm sbm";
+  }
+  &__fix {
+    width: 100%;
+    // margin-top: 60px;
+    // background-color: $dark;
+    //padding: 20px 20px 60px;
+    height: 120px;
+    z-index: 20;
+    position: fixed;
+    top: 40px;
+    .search__wrapper {
+      display: grid;
+      grid-template-rows: auto;
+      grid-template-columns: 1fr 1fr 2fr 1fr 1fr;
+      grid-gap: 1px;
+      grid-template-areas: "departure arrival dates options sbm";
+    }
+    .searchHead {
+      display: none;
+    }
+    &__inner {
+      max-width: auto;
+    }
+    .search__input {
+      width: auto;
+      &-date {
+        width: auto;
+      }
+      &-btn {
+        width: auto;
+        button {
+          margin: 0 auto 0;
+          span {
+            padding-left: 0;
+            font-size: 18px;
+            background-image: none;
+          }
+        }
+      }
+    }
+  }
+  &__inner {
+    max-width: 1200px;
+    margin: auto;
+  }
+  &__fixHead{
+    position: static;
+    height: auto;
+    padding-bottom: 0;
+    .search__wrapper {
+      display: grid;
+      grid-template-rows: auto;
+      grid-template-columns: 1fr 1fr 2fr 1fr 1fr;
+      grid-gap: 1px;
+      grid-template-areas: "departure arrival dates options sbm";
+    }
+    .searchHead {
+      display: none;
+    }
+    .search__input {
+      width: auto;
+      &-date {
+        width: auto;
+      }
+      &-btn {
+        width: auto;
+        button {
+          margin: 0 auto 0;
+          span {
+            padding-left: 0;
+            font-size: 18px;
+            background-image: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+.departure {
+  grid-area: departure;
+}
+.arrival {
+  grid-area: arrival;
+}
+.dates {
+  grid-area: dates;
+}
+.options {
+  grid-area: options;
+}
+.sbm {
+  grid-area: sbm;
+}
+
+.searchHead {
+  margin-bottom: 40px;
+}
+
+.search__input {
+  margin: 0 2px 20px;
+  //min-width: 200px;
+  height: 60px;
+  position: relative;
+
+  &-btn {
+    min-width: 100px;
+    button {
+      max-width: 300px;
+      margin: 40px auto 0;
+      &:hover {
+        background-color: #b9a900;
+        color: #000;
+      }
+      span {
+        padding-left: 40px;
+        font-size: 24px;
+        background-image: url("../../public/images/Icons/airplaneBlack.svg");
+        background-repeat: no-repeat;
+        background-position: 0 50%;
+      }
+    }
+  }
+  &-date {
+    position: relative;
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+.search__rew-val {
+  position: absolute;
+  top: 15px;
+  right: -18px;
+  border-radius: 50%;
+  background-color: #fff;
+  color: #fff;
+  width: 30px;
+  height: 30px;
+  box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+  background-image: url("../../public/images/Icons/tab.svg");
+  background-repeat: no-repeat;
+  background-size: 50%;
+  background-position: 50%;
+  z-index: 100;
+  cursor: pointer;
+}
+.search__switch {
+  display: flex;
+  justify-content: space-around;
+  margin: 40px auto 20px;
+  max-width: 250px;
+}
+
+.search__btnwrapper {
+  max-width: 200px;
+  margin: 20px auto;
+}
+
+@media (max-width: 1024px) {
+  .search .search__input {
+    margin: 0 2px 5px;
+  }
+  .search__input > div:not(.search__rew-val) {
+    width: 100%;
+  }
+  .search .search__wrapper {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+      "departure departure arrival arrival"
+      "dates dates options options"
+      "sbm sbm sbm sbm";
+  }
+}
+@media (max-width: 1068px) {
+  .search__fix {
+    .search__input {
+      margin: 0 2px 5px;
+    }
+    .search__input > div:not(.search__rew-val) {
+      width: 100%;
+    }
+    .search__wrapper {
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-areas:
+        "departure departure arrival arrival "
+        "dates dates  options sbm";
+    }
+  }
+}
+
+@media (max-width: 770px) {
+  .search__fix {
+    .search__input > div:not(.search__rew-val) {
+      width: 100%;
+    }
+    .search__wrapper {
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-areas:
+        "departure departure arrival arrival "
+        "dates dates options options "
+        "sbm sbm sbm sbm";
+    }
+    .search__input-btn button {
+      max-width: none;
+    }
+  }
+}
+
+@media (max-width: 760px) {
+  .search__input-btn button {
+    max-width: none;
+    margin: 0;
+  }
+}
+
+@media (max-width: 660px) {
+  .search .search__wrapper {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+      "departure departure departure departure"
+      "arrival arrival arrival arrival"
+      "dates dates dates dates"
+      "options options options options"
+      "sbm sbm sbm sbm";
+  }
+}
+
+@media (max-width: 580px) {
+  .search .search__wrapper {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+      "departure departure departure departure"
+      "arrival arrival arrival arrival"
+      "dates dates dates dates"
+      "options options options options"
+      "sbm sbm sbm sbm";
+  }
+  .search__fix {
+    .search__input > div:not(.search__rew-val) {
+      width: 100%;
+    }
+    .search__wrapper {
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-areas:
+        "departure departure departure departure"
+        "arrival arrival arrival arrival"
+        "dates dates dates dates"
+        "options options options options"
+        "sbm sbm sbm sbm";
+    }
+    .search__input-btn button {
+      max-width: none;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .search__rew-val {
+    top: 46px;
+    right: -20px;
+  }
+  .search {
+    height: auto;
+    &__fix {
+      position: relative;
+      background-color: transparent;
+    }
+  }
+}
+
+@media (max-width: 650px) {
+  .search__input {
+    &-btn {
+      button {
+        span {
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .search {
+    padding: 20px 10px;
+  }
+  .search__rew-val {
+    top: 53px;
+    right: -1px;
+  }
+}

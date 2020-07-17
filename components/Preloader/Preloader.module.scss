@@ -1,0 +1,77 @@
+@keyframes justRotate {
+  0% {
+    transform: scale(0, 0);
+  }
+  50% {
+    transform: scale(1, 1);
+  }
+  100% {
+    transform: scale(0, 0);
+  }
+}
+
+.prelloader {
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  left: 0;
+  top: 0;
+  position: fixed;
+  width: 100%;
+  z-index: 120;
+  // &__img {
+  //   background: url("../../img/stoloto-sprite.svg") 16px -14649px / 200% no-repeat;
+  //   width: 140px;
+  //   height: 170px;
+  //   position: absolute;
+  //   top: 45%;
+  //   left: 50%;
+  //   margin-left: -70px;
+  //   margin-top: -85px;
+  // }
+  &__progress {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: center;
+    padding-top: 190px;
+    color: white;
+    font-size: 3em;
+    line-height: 3em;
+    width: 110px;
+    margin: auto;
+  }
+  &__circle {
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    animation-name: justRotate;
+    animation: justRotate 2s infinite;
+    animation-delay: 0s;
+    animation-timing-function: linear;
+    &-0 {
+      animation-delay: -1s;
+    }
+    &-1 {
+      animation-delay: -0.5s;
+    }
+    &-2 {
+      animation-delay: 0s;
+    }
+  }
+  &__text {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0 25%;
+    width: 100%;
+
+    color: #fff;
+    font-size: 2em;
+    text-align: center;
+
+    position: fixed;
+    top: 30%;
+    left: 0;
+    right: 0;
+  }
+}

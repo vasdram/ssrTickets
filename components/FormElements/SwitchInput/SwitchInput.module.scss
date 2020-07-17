@@ -1,0 +1,35 @@
+@import '../../../public/styles/colors.scss';
+.switchIput {
+  position: relative;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background-color: $dark;
+  color: #fff;
+  cursor: pointer;
+  width: 50%;
+  transition: all 0.3s;
+  &-left {
+    border-radius: 10px 0 0 10px;
+  }
+  &-right {
+    border-radius: 0 10px 10px 0;
+  }
+  &.active {
+    background-color: $dark-light;
+    color: $yellow;
+  }
+  &:hover {
+    background-color: $dark-light;
+    color: $yellow;
+  }
+}
+
+.switchIput .input {
+  height: 1px;
+  width: 1px;
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}

@@ -1,0 +1,67 @@
+@import "../../public/styles/colors.scss";
+.ticket__details {
+  height: 0;
+  overflow: hidden;
+  transition: height 0.3s;
+  &.active {
+    height: auto;
+    margin-bottom: 25px;
+  }
+}
+
+.ticket__detailsItem {
+  border: 1px solid $dark-light;
+  border-radius: 8px;
+  box-shadow: 1px 1px 5px rgba(0,0,0, 0.5);
+  margin-bottom: 20px;
+}
+
+.ticket__detailsItemHead {
+  background-color: $dark-light;
+  padding: 10px;
+  color: #fff;
+  border-radius: 8px 8px 0 0;
+}
+
+.ticket__detailsItemBody {
+  padding: 20px 10px;
+  display: flex;
+  background-color: #fff;
+  border-radius: 0 0 8px 8px;
+}
+
+.ticket__detailsLogo {
+  margin-right: 20px;
+}
+
+.ticket__detailsInfoLine:first-child {
+  margin-bottom: 15px;
+}
+
+.ticket__detailsInfo {
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.ticket__detailsInfoLine {
+  display: flex;
+  justify-content: space-between;
+}
+
+.ticket__detailsInfoTime {
+  width: 15%;
+}
+
+.ticket__detailsInfoCode {
+  width: 15%;
+}
+
+.ticket__detailsInfoName {
+  width: 45%;
+}
+
+//  .ticket__detailsInfoDate{
+//   margin-left: 15px;
+//  }

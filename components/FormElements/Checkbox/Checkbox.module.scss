@@ -1,0 +1,24 @@
+.checkbox{
+    display: flex;
+    justify-content: flex-start;
+    margin: 10px 0;
+    input{
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        &:checked + .checkboxCheck{
+           background-image: url('../../../public/images/Icons/checkbox-checked.svg');
+        }
+    }
+}
+
+.checkboxCheck{
+    width: 20px;
+    height: 20px;
+    background-size: cover;
+    border-radius: 6px;
+    border: 1px solid #6ccebe;
+    margin-right: 10px;
+}

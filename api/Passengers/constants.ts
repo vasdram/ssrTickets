@@ -1,0 +1,5 @@
+export const GET_ADULT = 'GET_ADULT';
+export const GET_FLIGHT_CLASS = 'GET_FLIGHT_CLASS';
+export const GET_STOP_FLIGHT_COUNT = 'GET_STOP_FLIGHT_COUNT';
+export const GET_CHILDREN = 'GET_CHILDREN';
+export const GET_INFANTS = 'GET_INFANTS';

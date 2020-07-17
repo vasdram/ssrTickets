@@ -1,0 +1,15 @@
+@import '../../public/styles/colors.scss';
+
+.mainLayout {
+  // background-image: url(../../public/images/bgMain.jpg);
+  background-color: #f2f5f7;
+  //background: linear-gradient(180deg, rgb(65, 147, 210), rgb(147, 162, 217));
+  background-image: url(../../public/images/bgMain2.jpg);
+  background-repeat: no-repeat;
+  // background-position: 50% 100%;
+  background-attachment: fixed;
+  background-size: cover;
+  min-height: 1600px;
+  // padding-top: 40px;
+  overflow: hidden;
+}

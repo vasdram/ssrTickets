@@ -1,0 +1,17 @@
+@import '../../public/styles/colors.scss';
+.choiseLang {
+  text-align: right;
+  color: #fff;
+  font-size: 18px;
+  span {
+    cursor: pointer;
+    &.active {
+      color: $yellow;
+    }
+    &:first-child {
+      margin-right: 5px;
+      padding-right: 5px;
+      border-right: 1px solid #fff;
+    }
+  }
+}
